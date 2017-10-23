@@ -3,7 +3,8 @@ class Mitchell {
 
 
 	constructor(game) {
-		this.m_sprite = game.add.sprite(0,0,'mitchell');
+		this.id = 'mitchell';
+		this.sprite = game.add.sprite(0,0,'mitchell');
 		
 		this.velocity = { x: 0, y: 0};
 	}
@@ -13,8 +14,8 @@ class Mitchell {
 		this.velocity.x -= this.velocity.x * DECELERATION * dt;
 		this.velocity.y -= this.velocity.y * DECELERATION * dt;
 
-		this.m_sprite.x += this.velocity.x * dt;
-		this.m_sprite.y += this.velocity.y * dt;
+		this.sprite.x += this.velocity.x * dt;
+		this.sprite.y += this.velocity.y * dt;
 	}
 	
 	move(x, y) {

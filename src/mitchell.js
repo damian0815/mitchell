@@ -1,4 +1,4 @@
-// henry mitchell
+// Henry Mitchell
 // Land Purchase Officer responsible for much of the negotiations under which parts of the Ngati Awa 'southern' blocks were alienated to the Crown
 
 class Mitchell {

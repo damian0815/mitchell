@@ -14,6 +14,8 @@ function gameFunction() {
 		console.log('preload');
 		Mitchell.preload(g_game);
 		TeRangitukehu.preload(g_game);
+		
+		g_game.load.json('initial', 'assets/dialogue/initial.yarn.json');
 	}
 
 	function create () {
@@ -22,7 +24,7 @@ function gameFunction() {
 		g_teRangitukehu = new TeRangitukehu(g_game);
 		
 		g_deals = [];
-		g_conversationManager = new ConversationManager();
+		g_conversationManager = new ConversationManager(g_game);
 		createConversations();
 		
 		g_game.stage.backgroundColor = '#567622';
@@ -31,7 +33,8 @@ function gameFunction() {
 	
 	
 	function createConversations() { 
-		var initialConversationJson = g_game.load.json('conversations/initial.json');
+		var initialConversationJson = g_game.cache.getJSON('initial');
+		console.log('got json for conversation: ' + JSON.stringify(initialConversationJson));
 		g_conversationManager.addConversation(g_teRangitukehu, g_mitchell, initialConversationJson);
 	}
 
@@ -50,18 +53,12 @@ function gameFunction() {
 				var nextConversation = g_conversationManager.getConversation(g_teRangitukehu, g_mitchell);
 				if (nextConversation != null) {
 					g_activeConversation = nextConversation;
+					g_conversationManager.startConversation(g_activeConversation);
 				}
 			}
 		}
-		
-		if (g_activeConversation != null) {
-			g_activeConversation.update(dt);
-			if (g_activeConversation.isFinished) {
-				console.log('active conversation finished: ' + g_activeConversation);
-				g_activeConversation = null;
-			}
-		}
 
+		
 	}
 
 }

@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Mitchell: Good day.\nTe Rangitukehu: Kia ora. Who are you?\nMitchell: My name is Henry Mitchell, and I am Land Purchase Officer for the Crown.\nTe Rangitukehu: Oh yeah. And what do you want with us?\n\n[[I would like to talk to you about purchasing your land.|Mitchell_AskToBuy]]\n\n",
+		"position": {
+			"x": 99,
+			"y": 216
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Mitchell_AskToBuy",
+		"tags": "",
+		"body": "I would like to talk to you about purchasing some of your land.\n",
+		"position": {
+			"x": 429,
+			"y": 247
+		},
+		"colorID": 0
+	}
+]

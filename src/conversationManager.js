@@ -20,6 +20,8 @@ class ConversationManager {
 	    this.enterKey.onDown.add(() => {
 	    	conversationManager.stepConversation();
 	    });
+	    
+	    this.conversationRenderer = new ConversationRenderer(game);
 	}
 	
 	addConversation(actor1, actor2, dataJson) {
@@ -50,7 +52,7 @@ class ConversationManager {
 			var result = this.currentDialogueNode.next().value;
 			
 			if (result instanceof bondage.LineResult) {
-				console.log("speak line: " + result.text);
+				this.speakLine(result.text);
 			} else if (result instanceof bondage.OptionsResult) {
 				// Called when there is a choice to be made
 				// result.options is a list of options
@@ -68,6 +70,11 @@ class ConversationManager {
 		}
 	}
 	
+	speakLine(text) {
+		var context = this;
+		this.conversationRenderer.speakLine(text, function() { context.stepConversation(); } );
+	}
+
 	enterPressed() {
 		this.stepConversation();
 	}

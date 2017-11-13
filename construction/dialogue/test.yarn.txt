@@ -6,7 +6,7 @@ position: 99,216
 Mitchell: Good day.
 Te Rangitukehu: Kia ora. Who are you?
 Mitchell: My name is Henry Mitchell, and I am Land Purchase Officer for the Crown.
-Te Rangitukehu: Oh yeah. And what do you want with us?
+Te Rangitukehu: Aye. And what do you want with us?
 
 [[I would like to talk to you about purchasing your land.|Mitchell.AskToBuy]]
 
